@@ -1,4 +1,4 @@
-package com.company;
+package com.company.lab32;
 
 public class RectMatrix {
     private int nDim;
@@ -11,12 +11,12 @@ public class RectMatrix {
         matrix[0][0] = 0;
     }
 
-    public RectMatrix(int m, int n) {
-        nDim = m;
-        mDim = n;
-        matrix = new int[nDim][nDim];
+    public RectMatrix(int n, int m) {
+        nDim = n;
+        mDim = m;
+        matrix = new int[nDim][mDim];
         for (int i = 0; i < nDim; i++) {
-            for (int j = 0; j < nDim; j++) {
+            for (int j = 0; j < mDim; j++) {
                 matrix[i][j] = 0;
             }
         }
@@ -37,6 +37,10 @@ public class RectMatrix {
         }
     }
 
+    public void setAt(int val, int row, int col) {
+        matrix[row][col] = val;
+    }
+
     public int[][] get() {
         return matrix;
     }
@@ -44,6 +48,15 @@ public class RectMatrix {
     public int getAt(int row, int col) {
         return matrix[row][col];
     }
+
+    public int size() { return nDim*mDim; }
+
+//    public int[] shape() {
+//        return new int[]{ nDim, mDim };
+//    }
+
+    public int nDim() { return nDim; }
+    public int mDim() { return mDim; }
 
     @Override
     public String toString() {

@@ -1,43 +1,49 @@
 package com.company;
 
+import com.company.lab31.Lab31;
+import com.company.lab32.Lab32;
+import com.company.lab33.Lab33;
+import com.company.lab34.Lab34;
+import com.company.lab35.Lab35;
+import com.company.lab36.Lab36;
+import com.company.lab37.Lab37;
+import com.company.lab38.Lab38;
+
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        int[][] n = {{1, 2}, {3, 4}};
-        int[][] m = {{5, 6}, {7, 8}};
-
-        SquareMatrix mtxA = new SquareMatrix(n);
-        SquareMatrix mtxB = new SquareMatrix(m);
-
-        SquareMatrix[] mtxs = new SquareMatrix[2];
-        mtxs[0] = mtxA;
-        mtxs[1] = mtxB;
-
-        SquareMatrix addMtx = mtxs[0].add(mtxs[1]);
-        SquareMatrix subMtx = mtxs[0].sub(mtxs[1]);
-        SquareMatrix mulMtx = mtxs[0].mul(mtxs[1]);
-
-        System.out.println("add:\n" + mtxs[0].add(mtxs[1]).toString() +
-                "sub:\n" + mtxs[0].sub(mtxs[1]).toString() +
-                "mul:\n" + mtxs[0].mul(mtxs[1]).toString());
-
-        int minIdx = -1;
-        if ((mtxs[0].firstNorma() < mtxs[1].firstNorma()) && (mtxs[0].secondNorma() < mtxs[1].secondNorma())) {
-            minIdx = 0;
-        } else if ((mtxs[1].firstNorma() < mtxs[0].firstNorma()) && (mtxs[1].secondNorma() < mtxs[0].secondNorma())) {
-            minIdx = 1;
-        }
-
-        System.out.println("Matrix with min first and second normas: " + (minIdx == -1 ? "None" : minIdx));
-    }
-    
-    public static void changeMinMax(RectMatrix mtx, int col) {
-        int minRow = 0;
-        int maxRow = 0;
-        int min = 0;
-        int max = 0;
-        for (int i = 0; i < ; i++) {
-            
+        Scanner scanner = new Scanner(System.in);
+        int labNum = scanner.nextInt();
+        switch (labNum) {
+            case 1:
+                Lab31.lab_1();
+                break;
+            case 2:
+                Lab32.lab_2();
+                break;
+            case 3:
+                Lab33.lab_3();
+                break;
+            case 4:
+                Lab34.lab_4();
+                break;
+            case 5:
+                Lab35.lab_5();
+                break;
+            case 6:
+                Lab36.lab_6();
+                break;
+            case 7:
+                Lab37.lab_7();
+                break;
+            case 8:
+                Lab38.lab_8();
+                break;
+            default:
+                break;
         }
     }
+
 }

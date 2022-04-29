@@ -1,6 +1,4 @@
-package com.company;
-
-import java.util.Arrays;
+package com.company.lab31;
 
 public class SquareMatrix {
     private int nDim;
@@ -31,6 +29,11 @@ public class SquareMatrix {
             }
         }
     }
+
+    public void setAt(int val, int row, int col) {
+        matrix[row][col] = val;
+    }
+
     public int[][] get() {
         return matrix;
     }
@@ -109,6 +112,10 @@ public class SquareMatrix {
         }
         return max;
     }
+
+    public int size() { return nDim*nDim; }
+
+    public int nDim() { return nDim; }
 
     @Override
     public String toString() {
